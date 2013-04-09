@@ -1,0 +1,20 @@
+{
+    "id": "sauce-java-example",
+    "name": "Java Sample project with Sauce support",
+    "source": "git://github.com/rossrowe/sauce-java-clickstart.git",
+    "description" : "A set of Java tests that demonstrate Sauce support",
+    "doc-url" : "https://github.com/rossrowe/sauce-java-clickstart/blob/master/readme.md",
+    "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/ee_icon.png",
+    "supported-by" : "cloudbees",
+    "order" : 1,
+
+
+    "build-with-jenkins": {
+        "plugins" : ["git", "sauce-ondemand"],
+        "template": {
+            "type": "https://raw.github.com/rossrowe/sauce-java-clickstart/master/jenkins_template.xml",
+            "options": {
+            }
+        }
+    }
+}
