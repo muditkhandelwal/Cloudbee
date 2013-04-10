@@ -18,6 +18,7 @@ public class DemoTest {
 	 WebElement element,e5;
 	 Wait<WebDriver> wait;
 	 private String sessionId;
+	 public @Rule TestName testName= new TestName();
 	  
 	 @BeforeClass
 	 public void Startup() throws Exception{
