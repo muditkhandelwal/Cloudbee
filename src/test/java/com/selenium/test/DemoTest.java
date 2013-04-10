@@ -23,8 +23,7 @@ public class DemoTest {
 	  driver = new FirefoxDriver();
 	 }
 	  
-	 @Test (description="Google Login")
-
+	@Test (description="Google Login")
 	public void GoogleLogin() throws Exception{
 		 wait = new WebDriverWait(driver, 5000);
 		driver.manage().window().maximize();
