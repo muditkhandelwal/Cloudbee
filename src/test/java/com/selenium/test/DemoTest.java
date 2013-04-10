@@ -17,10 +17,18 @@ public class DemoTest {
 	 private WebDriver driver;
 	 WebElement element,e5;
 	 Wait<WebDriver> wait;
+	 private String sessionId;
 	  
 	 @BeforeClass
-	 public void Startup(){
-	  driver = new FirefoxDriver();
+	 public void Startup() throws Exception{
+	  DesiredCapabilities capabillities = DesiredCapabilities.firefox();
+        capabillities.setCapability("version", "5");
+        capabillities.setCapability("platform", Platform.XP);
+        capabillities.setCapability("name",  testName.getMethodName());
+        this.driver = new RemoteWebDriver(
+                new URL("http://" + authentication.getUsername() + ":" + authentication.getAccessKey() + "@ondemand.saucelabs.com:80/wd/hub"),
+                capabillities);
+        this.sessionId = ((RemoteWebDriver)driver).getSessionId().toString();
 	 }
 	  
 	@Test	
